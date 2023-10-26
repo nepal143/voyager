@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>War Tech</title>
+    <title>voyager</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,46 +14,63 @@
             <div class="container">
 
                 <div class="logo">
-                  <h1>VOYAGER</h1>
-                  <img src="logohover.png" alt="img" width="70px" height="60px">
-    
-                </div>
+                    <h1>VOYAGER</h1>
+                    <img src="./data/logohover.png" alt="img" width="70px" height="50px">
+                  </div>
 
                 <div class="links">
-                    <a href="./index.html">HOME</a>
-                    <a href="">TEAM</a>
-                    <a href="./navcomp/login.html">LOGIN</a>
-                    <a href="./navcomp/signup.html">REGISTER</a>
+                    <a href="#">HOME</a>
+                    <a href="our team/our-team.html">TEAM</a>
+                    <a href="">LOGIN</a>
+                    <a href="">REGISTER</a>
                 </div>
 
 
             </div>
-
         </nav>
-
     <!-- nav bar ends here  -->
 
-<!-- <div class="slider"> -->
-<div class="section">
-    <img  src="coaching.jpeg" alt="backgrond-image" class="landing-page-background">
-    <img  src="coaching.jpeg" alt="backgrond-image" class="landing-page-background1">
-    <img  src="coaching.jpeg" alt="backgrond-image" class="landing-page-background2">
-    <img  src="coaching.jpeg" alt="backgrond-image" class="landing-page-background3">
-</div>
-    <div class="radial-gradient"></div>
-
-
-    <!-- wartech title 5 times -->
+    <!-- landing page image with radially blur background  -->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="landing-page-background.png" class="landing-page-background">
+        </div>
+        <div class="mySlides fade">
+          <img src="coaching.jpeg" class="landing-page-background">
+        </div>
+        
+        <!-- <div class="mySlides fade">
+          
+          <img src="img_mountains_wide.jpg" class="landing-page-background">
     
-    <div class="wartech">
-        <span class="title-1">VOYAGER</span>
+        </div> -->
+        <div class="radial-gradient"></div>
+        </div>
+        <br>
+        
+        
+        
+        <!-- voyager title 5 times -->
+        
+        <div class="voyager">
+            <span class="title-1">VOYAGER</span>
         <span class="title-2">VOYAGER</span>
         <span class="title-center">VOYAGER</span>
         <span class="title-2">VOYAGER</span>
         <span class="title-1">VOYAGER</span>
     </div>
-<button class="button"  >GET STARTED</button>
-
+    <div style="text-align:center;" >
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <!-- <span class="dot"></span>  -->
+    </div> 
+<!-- <button class="button"  >GET STARTED</button> -->
+<ul>
+    <li>
+      GET STARTED
+      <span></span><span></span><span></span><span></span>
+    </li>
+</ul>
 <h1>User Input Form</h1>
 <form action="/api" method="post">
     <label for="userInput">Enter your input:</label><br>
@@ -62,8 +79,27 @@
 </form>
 <div id="response"></div>
 <script src="script.js"></script>
+<script>
+   let slideIndex = 0;
+showSlides();
 
-
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }2
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 4000); // Change image every 2 seconds
+}
+</script>
 </body>
 
 </html>
