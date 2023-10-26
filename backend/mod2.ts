@@ -27,10 +27,10 @@ We are using you as an AI to assist users in exploring their areas of interest a
 `;
 conversation.push(introductoryMessage);
 
-async function runConversation() {
+async function runConversation(userInput) {
     while (true) {
-        const userMessage = await Input.prompt("User: ");
-        conversation.push(`User: ${userMessage}`); // Push user message to the conversation
+        // const userMessage = await Input.prompt("User: ");
+        conversation.push(`User: ${userInput}`); // Push user message to the conversation
 
         const response = await API.sendMessage(
             "Previous conversation:\n" + conversation.join("\n") + "\n\nNow answer the prompt:"
@@ -38,8 +38,8 @@ async function runConversation() {
 
         conversation.push(`ChatGPT: ${response.text}`); // Push ChatGPT's response to the conversation
 
-        console.log("ChatGPT:", response.text);
-     //    return conversation ;
+        // console.log("ChatGPT:", response.text);
+        return response.text ;
     }
 }
 // Start the conversation loop
@@ -47,21 +47,23 @@ app.use(express.json());
 app.get("/" , (req,res) =>{
      res.send("hello page is working ");
 })
+// Add middleware to parse JSON request bodies
+
 app.post('/chat', async (req, res) => {
-     const userInput = req.body.userInput;
-     console.log(req.body.userInput)
- 
-     try {
-         // Execute the conversation and get the conversation history
-         const conversationHistory = await runConversation(userInput);
- 
-         // Respond with the conversation history
-         res.json({ conversation: conversationHistory });
-     } catch (error) {
-         // Handle errors and send an error response
-         res.status(500).json({ error: error.message });
-     }
- });
+    const userInput = req.body.userInput; // Assuming the request contains a JSON object with a "userInput" field
+    console.log(userInput);
+
+    try {
+        // Execute the conversation and get the conversation history
+        const conversationHistory = await runConversation(userInput);
+
+        // Respond with the conversation history
+        res.json({ conversation: conversationHistory });
+    } catch (error) {
+        // Handle errors and send an error response
+        res.status(500).json({ error: error.message });
+    }
+});
  
  app.listen(port, () => {
      console.log(`Server is running on port ${port}`);
