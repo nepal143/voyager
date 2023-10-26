@@ -1,3 +1,3 @@
-# Voyger 
+# Voyager 
 Run command for backend 
 deno run -A mod2.ts
