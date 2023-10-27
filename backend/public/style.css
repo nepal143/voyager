@@ -14,7 +14,7 @@ nav {
     width: 100%;
     z-index: 3;
     display: grid;
-    position: fixed;
+    position: absolute;
     place-items: center;
 }
 
@@ -402,7 +402,7 @@ color: white;
 }
 
 .chatbot{
-     position: fixed;
+     position: sticky;
      right: 40px;
      bottom: 100px;
      width: 420px;
