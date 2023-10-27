@@ -58,11 +58,11 @@ function showSlides() {
 
 
 
-  const chatbotToggler = document.querySelector(".toggler");
-const closeBtn = document.querySelector(".close-btn");
+//   const chatbotToggler = document.querySelector(".toggler");
+// const closeBtn = document.querySelector(".close-btn");
 
-closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
-chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
+// closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
+// chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
 
 
 
@@ -99,20 +99,7 @@ function handleUserInput() {
     currentQuestionIndex++;
     displayCurrentQuestion();
 }
-// document.addEventListener("DOMContentLoaded", () => {
-//     // Your JavaScript code here
-//     // ...
 
-//     // Example: Add an event listener for the form
-//     document.querySelector("form").addEventListener("submit", async (event) => {
-//         event.preventDefault();
-//         const userInput = document.getElementById("userInput").value;
-//         addMessageToChat(userInput, false);
-//         // ... rest of your code
-//     });
-
-//     // ...
-// });
 
 document.getElementById("aptitudeForm").addEventListener("submit", (event) => {
     event.preventDefault();
