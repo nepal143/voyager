@@ -77,6 +77,27 @@ router.post("/api", async (context: Context) => {
     }
   }
 });
+let get_questions = "give me some physometric questions to check the field of intrest of the user"
+router.post("/api/attribute", async (context: Context) => {
+  const body = context.request.body(); // Assuming JSON data is sent in the request body
+  if (body.type === "json") {
+    const userInput = (await body.value).userInput;
+    console.log(userInput);
+
+    try {
+      // Execute the conversation and get the conversation history
+      const conversationHistory = await runConversation(get_questions);
+
+      // Respond with the conversation history
+      context.response.body = { conversation: conversationHistory };
+    } catch (error) {
+      // Handle errors and send an error response
+      context.response.status = 500;
+      context.response.body = { error: error.message };
+    }
+  }
+});
+
 
 app.use(router.routes());
 app.use(router.allowedMethods());
