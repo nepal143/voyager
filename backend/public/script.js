@@ -26,7 +26,9 @@ async function handleUserInput() {
     const userInput = document.getElementById("userInput").value;
     addMessageToChat(userInput, false);
     document.getElementById("userInput").value = "";
+    
     addMessageToChat("thinking...", true);
+    chatbox.scrollTo(0, chatbox.scrollHeight);
     if (firstTime) {
         
         // Only on the first call, send the questions, answers, and user input in the request body
