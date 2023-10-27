@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="show-chatbot">
   <!-- nav bar starts here -->
   <nav>
     <div class="container">
@@ -63,8 +63,8 @@
     <div class="title-center">VOYAGER</div>
     <p class="quote">Are You Looking for Career Counselling Online?
       Voyager offers the best of its kind online career counselling in India. Get in touch with our latest tech to get the best career counselling and take your career to a new high.</p>
-    <ul>
-      <li>
+    <ul class="kunal">
+      <li class="kunal-li">
         GET STARTED
         <span></span><span></span><span></span><span></span>
       </li>
@@ -86,6 +86,36 @@
   </form>
   <div id="response"></div>
   <script src="script.js"></script>
+
+
+
+
+
+
+  <button class="toggler">
+    <span class="material-symbols-outlined">mode_comment</span>
+    <span class="close-btn material-symbols-outlined">close</span>
+</button>
+<div class="chatbot">
+    <header>
+         <h2>Chatbot</h2>
+    </header>
+    <ul class="chatbox">
+         <li class="chat incoming">
+              <p>Hi There<br> How can I help you?</p>
+         </li>
+         <li class="chat outgoing">
+              <p>Hello How are you?</p>
+         </li>
+    </ul>
+    <div class="chat-input">
+         <textarea placeholder="Enter here..." required></textarea>
+    <a href="#"><span id="send-btn" class="material-symbols-outlined">send</span></a>
+    </div>
+</div>
+
+
+
 
 </body>
 
