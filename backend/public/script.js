@@ -82,38 +82,37 @@ const questions = [
     // Add more questions here
 ];
 
-// const answers = []; // An array to store the answers
+const answers = []; // An array to store the answers
 
-// let currentQuestionIndex = 0;
+let currentQuestionIndex = 0;
 
-// function displayCurrentQuestion() {
-//     if (currentQuestionIndex < questions.length) {
-//         const questionText = questions[currentQuestionIndex];
-//         document.getElementById("questionText").textContent = questionText;
-//     } else {
-//         document.getElementById("questionText").textContent = "All questions answered!";
-//     }
-// }
+function displayCurrentQuestion() {
+    if (currentQuestionIndex < questions.length) {
+        const questionText = questions[currentQuestionIndex];
+        document.getElementById("questionText").textContent = questionText;
+    } else {
+        document.getElementById("questionText").textContent = "All questions answered!";
+    }
+}
 
-// function handleUserInput() {
-//     const userInput = document.getElementById("aptitudeInput").value;
-//     addMessageToChat(userInput, false);
+function handleUserInput1() {
+    const userInput = document.getElementById("aptitudeInput").value;
 
-//     // Store the answer in the 'answers' array
-//     answers.push(userInput);
+    // Store the answer in the 'answers' array
+    answers.push(userInput);
 
-//     document.getElementById("aptitudeInput").value = "";
+    document.getElementById("aptitudeInput").value = "";
 
-//     currentQuestionIndex++;
-//     displayCurrentQuestion();
-// }
-
-
-// document.getElementById("aptitudeForm").addEventListener("submit", (event) => {
-//     event.preventDefault();
-//     handleUserInput();
-//     console.log(answers);
-// });
+    currentQuestionIndex++;
+    displayCurrentQuestion();
+}
 
 
-// displayCurrentQuestion();
+document.getElementById("aptitudeForm").addEventListener("submit", (event) => {
+    event.preventDefault();
+    handleUserInput1();
+    console.log(answers);
+});
+
+
+displayCurrentQuestion();
