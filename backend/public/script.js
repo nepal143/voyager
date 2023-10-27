@@ -116,3 +116,4 @@ document.getElementById("aptitudeForm").addEventListener("submit", (event) => {
 
 
 displayCurrentQuestion();
+
