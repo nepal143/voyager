@@ -5,14 +5,13 @@ function addMessageToChat(message, incoming) {
     chat.innerHTML = `<p>${message}</p>`;
     chatbox.appendChild(chat);
 }
+const chatbox = document.querySelector(".chatbox");
 
-
-document.querySelector("form").addEventListener("submit", async (event) => {
-    event.preventDefault();
+async function handleUserInput() {
     const userInput = document.getElementById("userInput").value;
-    addMessageToChat(userInput , false);
+    addMessageToChat(userInput, false);
+    document.getElementById("userInput").value = "";
 
-    // Make an API request to send user input and get a response
     const response = await fetch("/api", {
         method: "POST",
         headers: {
@@ -27,9 +26,20 @@ document.querySelector("form").addEventListener("submit", async (event) => {
     } else {
         console.error("Error:", response.status);
     }
+    chatbox.scrollTo(0, chatbox.scrollHeight);
+}
+
+document.getElementById("userInput").addEventListener("keyup", (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        handleUserInput();
+    }
 });
 
 
+document.querySelector(".chat-input span").addEventListener("click", () => {
+    handleUserInput();
+});
 
 
 
