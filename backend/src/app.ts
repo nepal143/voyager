@@ -98,7 +98,6 @@ router.post("/api/attribute", async (context: Context) => {
   }
 });
 
-
 app.use(router.routes());
 app.use(router.allowedMethods());
 

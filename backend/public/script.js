@@ -10,9 +10,14 @@ let firstTime = true; // A flag to track if it's the first time the function is 
 
 const answers = []; // An array to store the answers
 const questions = [
-    "What is 2 + 2?",
-    "If a train travels at 60 mph for 2 hours, how far does it go?",
-    "Simplify: 3 * (4 + 2) - 7",
+    "What hobbies or activities do you enjoy in your free time?",
+    "Are you interested in technology, arts, science, or business?",
+    "What are your strongest technical skills?",
+    "Are you more analytical or creative in problem-solving?" ,
+    "Do you enjoy working with people or prefer tasks that require little interaction?",
+    "Are you proficient in any foreign languages?",
+    "Do you prefer working indoors or outdoors?",
+    "What work values are most important to you (e.g., stability, innovation, helping others)?"
     // Add more questions here
 ];
 
@@ -23,7 +28,7 @@ async function handleUserInput() {
 
     if (firstTime) {
         // Only on the first call, send the questions, answers, and user input in the request body
-        const combinedData = questions.join("\n") + answers.join("\n") + "These are the previous questions you asked the user to get their area of interest: " + userInput;
+        const combinedData = questions.join("\n") + answers.join("\n") + "These are the previous questions you asked the user to get their area of interest: first make a analysis on the answers given by the user \n " + "User:" + userInput;
 
         const response = await fetch("/api", {
             method: "POST",
