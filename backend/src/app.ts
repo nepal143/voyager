@@ -101,7 +101,17 @@ router.post("/api/attribute", async (context: Context) => {
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-const port = 3000;
+// Set an environment variable
+Deno.env.set('PORT', '3000');
+
+// Access an environment variable
+const port = Deno.env.get('PORT');
+if (port) {
+    console.log(`Server is running on http://localhost:${port}`);
+} else {
+    console.log('PORT environment variable not set.');
+}
+
 
 console.log(`Server is running on http://localhost:${port}`);
 
