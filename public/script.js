@@ -129,7 +129,8 @@ function displayCurrentQuestion() {
     } else {
         document.getElementById("questionText").textContent = "All questions answered!";
         chat_box.style.display = "flex";
-        let question_box = document.querySelector(".question_box");
+        let question_box = document.getElementsByClassName("aptitude_test")[0];
+        window.scrollTo(0 , window.innerHeight)
         question_box.style.display = "none" ; 
         console.log(question_box)
     }

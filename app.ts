@@ -102,7 +102,7 @@ app.use(router.routes());
 app.use(router.allowedMethods());
 
 // Set an environment variable
-Deno.env.set('PORT', '3000');
+Deno.env.set('PORT', '4000');
 
 // Access an environment variable
 const port = Deno.env.get('PORT');
