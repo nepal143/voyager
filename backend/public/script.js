@@ -16,7 +16,7 @@ const questions = [
     "Are you more analytical or creative in problem-solving?" ,
     "Do you enjoy working with people or prefer tasks that require little interaction?",
     "Are you proficient in any foreign languages?",
-    "Do you prefer working indoors or outdoors?",
+    "What are your long-term career goals?",
     "What work values are most important to you (e.g., stability, innovation, helping others)?"
     // Add more questions here
 ];
