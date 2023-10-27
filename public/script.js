@@ -5,6 +5,7 @@ function addMessageToChat(message, incoming) {
     chat.innerHTML = `<p>${message}</p>`;
     chatbox.appendChild(chat);
 }
+
 const chatbox = document.querySelector(".chatbox");
 let firstTime = true; // A flag to track if it's the first time the function is called
 const chat_box = document.getElementById("chatbox");
@@ -128,6 +129,9 @@ function displayCurrentQuestion() {
     } else {
         document.getElementById("questionText").textContent = "All questions answered!";
         chat_box.style.display = "flex";
+        let question_box = document.querySelector(".question_box");
+        question_box.style.display = "none" ; 
+        console.log(question_box)
     }
 }
 
