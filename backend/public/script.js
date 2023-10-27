@@ -6,28 +6,62 @@ function addMessageToChat(message, incoming) {
     chatbox.appendChild(chat);
 }
 const chatbox = document.querySelector(".chatbox");
+let firstTime = true; // A flag to track if it's the first time the function is called
+
+const answers = []; // An array to store the answers
+const questions = [
+    "What is 2 + 2?",
+    "If a train travels at 60 mph for 2 hours, how far does it go?",
+    "Simplify: 3 * (4 + 2) - 7",
+    // Add more questions here
+];
 
 async function handleUserInput() {
     const userInput = document.getElementById("userInput").value;
     addMessageToChat(userInput, false);
     document.getElementById("userInput").value = "";
 
-    const response = await fetch("/api", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ userInput }),
-    });
+    if (firstTime) {
+        // Only on the first call, send the questions, answers, and user input in the request body
+        const combinedData = questions.join("\n") + answers.join("\n") + "These are the previous questions you asked the user to get their area of interest: " + userInput;
 
-    if (response.ok) {
-        const data = await response.json();
-        addMessageToChat(data.conversation, true); // Add the response to the incoming chat
+        const response = await fetch("/api", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ userInput: combinedData }),
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            addMessageToChat(data.conversation, true); // Add the response to the incoming chat
+        } else {
+            console.error("Error:", response.status);
+        }
+
+        firstTime = false; // Set the flag to false after the first call
     } else {
-        console.error("Error:", response.status);
+        // For subsequent calls, send only the user input
+        const response = await fetch("/api", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ userInput }),
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            addMessageToChat(data.conversation, true); // Add the response to the incoming chat
+        } else {
+            console.error("Error:", response.status);
+        }
     }
+
     chatbox.scrollTo(0, chatbox.scrollHeight);
 }
+
 
 document.getElementById("userInput").addEventListener("keyup", (event) => {
     if (event.key === "Enter") {
@@ -36,10 +70,10 @@ document.getElementById("userInput").addEventListener("keyup", (event) => {
     }
 });
 
-
 document.querySelector(".chat-input span").addEventListener("click", () => {
     handleUserInput();
 });
+
 
 
 
@@ -75,14 +109,8 @@ function showSlides() {
 
 
 
-const questions = [
-    "What is 2 + 2?",
-    "If a train travels at 60 mph for 2 hours, how far does it go?",
-    "Simplify: 3 * (4 + 2) - 7",
-    // Add more questions here
-];
 
-const answers = []; // An array to store the answers
+
 
 let currentQuestionIndex = 0;
 
