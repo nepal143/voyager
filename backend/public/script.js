@@ -5,14 +5,13 @@ function addMessageToChat(message, incoming) {
     chat.innerHTML = `<p>${message}</p>`;
     chatbox.appendChild(chat);
 }
+const chatbox = document.querySelector(".chatbox");
 
-
-document.querySelector("form").addEventListener("submit", async (event) => {
-    event.preventDefault();
+async function handleUserInput() {
     const userInput = document.getElementById("userInput").value;
-    addMessageToChat(userInput , false);
+    addMessageToChat(userInput, false);
+    document.getElementById("userInput").value = "";
 
-    // Make an API request to send user input and get a response
     const response = await fetch("/api", {
         method: "POST",
         headers: {
@@ -27,9 +26,20 @@ document.querySelector("form").addEventListener("submit", async (event) => {
     } else {
         console.error("Error:", response.status);
     }
+    chatbox.scrollTo(0, chatbox.scrollHeight);
+}
+
+document.getElementById("userInput").addEventListener("keyup", (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        handleUserInput();
+    }
 });
 
 
+document.querySelector(".chat-input span").addEventListener("click", () => {
+    handleUserInput();
+});
 
 
 
@@ -56,8 +66,6 @@ function showSlides() {
   }
 
 
-
-
 //   const chatbotToggler = document.querySelector(".toggler");
 // const closeBtn = document.querySelector(".close-btn");
 
@@ -74,38 +82,38 @@ const questions = [
     // Add more questions here
 ];
 
-const answers = []; // An array to store the answers
+// const answers = []; // An array to store the answers
 
-let currentQuestionIndex = 0;
+// let currentQuestionIndex = 0;
 
-function displayCurrentQuestion() {
-    if (currentQuestionIndex < questions.length) {
-        const questionText = questions[currentQuestionIndex];
-        document.getElementById("questionText").textContent = questionText;
-    } else {
-        document.getElementById("questionText").textContent = "All questions answered!";
-    }
-}
+// function displayCurrentQuestion() {
+//     if (currentQuestionIndex < questions.length) {
+//         const questionText = questions[currentQuestionIndex];
+//         document.getElementById("questionText").textContent = questionText;
+//     } else {
+//         document.getElementById("questionText").textContent = "All questions answered!";
+//     }
+// }
 
-function handleUserInput() {
-    const userInput = document.getElementById("aptitudeInput").value;
-    addMessageToChat(userInput, false);
+// function handleUserInput() {
+//     const userInput = document.getElementById("aptitudeInput").value;
+//     addMessageToChat(userInput, false);
 
-    // Store the answer in the 'answers' array
-    answers.push(userInput);
+//     // Store the answer in the 'answers' array
+//     answers.push(userInput);
 
-    document.getElementById("aptitudeInput").value = "";
+//     document.getElementById("aptitudeInput").value = "";
 
-    currentQuestionIndex++;
-    displayCurrentQuestion();
-}
-
-
-document.getElementById("aptitudeForm").addEventListener("submit", (event) => {
-    event.preventDefault();
-    handleUserInput();
-    console.log(answers);
-});
+//     currentQuestionIndex++;
+//     displayCurrentQuestion();
+// }
 
 
-displayCurrentQuestion();
+// document.getElementById("aptitudeForm").addEventListener("submit", (event) => {
+//     event.preventDefault();
+//     handleUserInput();
+//     console.log(answers);
+// });
+
+
+// displayCurrentQuestion();
