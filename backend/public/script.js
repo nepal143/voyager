@@ -1,3 +1,12 @@
+function addMessageToChat(message, incoming) {
+    const chatbox = document.querySelector(".chatbox");
+    const chat = document.createElement("li");
+    chat.classList.add("chat", incoming ? "incoming" : "outgoing");
+    chat.innerHTML = `<p>${message}</p>`;
+    chatbox.appendChild(chat);
+}
+
+
 document.querySelector("form").addEventListener("submit", async (event) => {
     event.preventDefault();
     const userInput = document.getElementById("userInput").value;
@@ -13,12 +22,12 @@ document.querySelector("form").addEventListener("submit", async (event) => {
 
     if (response.ok) {
         const data = await response.json();
-        document.getElementById("response").innerHTML = `<p>Response:</p><pre>${data.conversation}</pre>`;
-        console.log("responce");
+        addMessageToChat(data.conversation, true); // Add the response to the incoming chat
     } else {
         console.error("Error:", response.status);
     }
 });
+
 
 
 
