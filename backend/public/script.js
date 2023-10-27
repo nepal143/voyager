@@ -21,12 +21,14 @@ const questions = [
     // Add more questions here
 ];
 
+
 async function handleUserInput() {
     const userInput = document.getElementById("userInput").value;
     addMessageToChat(userInput, false);
     document.getElementById("userInput").value = "";
-
+    addMessageToChat("thinking...", true);
     if (firstTime) {
+        
         // Only on the first call, send the questions, answers, and user input in the request body
         const combinedData = questions.join("\n") + answers.join("\n") + "These are the previous questions you asked the user to get their area of interest: first make a analysis on the answers given by the user \n " + "User:" + userInput;
 
@@ -37,7 +39,7 @@ async function handleUserInput() {
             },
             body: JSON.stringify({ userInput: combinedData }),
         });
-
+        chatbox.removeChild(chatbox.lastChild);
         if (response.ok) {
             const data = await response.json();
             addMessageToChat(data.conversation, true); // Add the response to the incoming chat
@@ -55,13 +57,14 @@ async function handleUserInput() {
             },
             body: JSON.stringify({ userInput }),
         });
-
+        chatbox.removeChild(chatbox.lastChild);
         if (response.ok) {
             const data = await response.json();
-            addMessageToChat(data.conversation, true); // Add the response to the incoming chat
+            addMessageToChat(data.conversation, true); 
         } else {
             console.error("Error:", response.status);
         }
+
     }
 
     chatbox.scrollTo(0, chatbox.scrollHeight);
@@ -110,9 +113,6 @@ function showSlides() {
 
 // closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
 // chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
-
-
-
 
 
 

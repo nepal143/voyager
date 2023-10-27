@@ -77,7 +77,7 @@ router.post("/api", async (context: Context) => {
     }
   }
 });
-let get_questions = "give me some physometric questions to check the field of intrest of the user"
+let get_questions = "give me some psychometric questions to check the field of intrest of the user"
 router.post("/api/attribute", async (context: Context) => {
   const body = context.request.body(); // Assuming JSON data is sent in the request body
   if (body.type === "json") {
