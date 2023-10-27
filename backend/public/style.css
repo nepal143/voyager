@@ -406,7 +406,7 @@ color: white;
 }
 
 .chatbot{
-     position:relative;
+     position:sticky;
      right: 40px;
      bottom: 100px;
      width:  35vw;
@@ -443,8 +443,8 @@ body.show-chatbot .chatbot{
 .chat_box{
      display: flex;
      justify-content: center;
-     margin-left:900px ;
-     margin-top: 10px;
+     /* margin-left:30vw; */
+     /* margin-top: ; */
      
 }
 .head{
@@ -539,4 +539,58 @@ body.show-chatbot .chatbot{
 .show-chatbot .toggler span:last-child{
      opacity: 1;
 }
+.aptitude_test{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5%;
+    width: 35vw;
+    margin-top: 4%;
+    margin-left: 32vw;
+    margin-bottom:4vh;
+    padding:2vw;
+    box-shadow: 0 0 120px 0 rgba(0,0,0,0.1), 0 32px 64px -48px rgba(0,0,0,0.5);
+}
+.question-container{
+    width: 32vw;
 
+
+}
+
+#aptitudeForm{
+    /* align-self: center; */
+    
+    width:30vw ;
+    flex-direction: column;
+    /* height:20vh; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+#aptitudeForm h2{
+    margin: 10px auto;
+}
+#khatam{
+    border-radius: 30px;
+    padding: 10px 20px ;
+    font-size: 1.3vw;
+
+    /* margin: auto; */
+}
+#aptitudeInput{
+ height: 5vw;
+    border-radius: 5px;
+    margin-top: 20px;
+    /* padding: 2vw ; */
+}
+
+
+#khatam:hover{
+    background-color: burlywood;
+
+}
+#chatbox{
+    display: none;
+}

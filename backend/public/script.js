@@ -7,7 +7,7 @@ function addMessageToChat(message, incoming) {
 }
 const chatbox = document.querySelector(".chatbox");
 let firstTime = true; // A flag to track if it's the first time the function is called
-
+const chat_box = document.getElementById("chatbox");
 const answers = []; // An array to store the answers
 const questions = [
     "What hobbies or activities do you enjoy in your free time?",
@@ -125,6 +125,7 @@ function displayCurrentQuestion() {
         document.getElementById("questionText").textContent = questionText;
     } else {
         document.getElementById("questionText").textContent = "All questions answered!";
+        chat_box.style.display = "flex";
     }
 }
 

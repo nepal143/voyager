@@ -82,21 +82,22 @@
   <!-- <button class="button"  >GET STARTED</button> -->
   <!-- /*started editing from here*/ -->
  
-  <div   id="counselling">
+  <div id="counselling">
     <h1 class="head">Career counselling</h1>
-    <div class="aptitude_test" style="margin-left: 10%; padding-top: 3%;">
-      <h2>Aptitude Question</h2>
-    <form id="aptitudeForm">
+    <div class="aptitude_test" >
+      <form id="aptitudeForm">
+      <h2>Career Assement Question</h2>
         <div class="question-container">
             <p id="questionText"></p>
         </div>
-        <input type="text" id="aptitudeInput" name="aptitudeInput" required><br><br>
-        <input type="submit" value="Submit">
+        <input type="text" id="aptitudeInput" name="aptitudeInput" required></input>
+        <br><br>
+        <input id="khatam" type="submit" value="Submit">
     </form>
     </div>
-    <div class="chat_box">
+    <div class="chat_box" id="chatbox">
       <form action="/api" method="post">
-    <div class="chatbot">
+    <div class="chatbot" >
         <header>
             <h2>Chatbot</h2>
         </header>
@@ -130,7 +131,7 @@
 
             if (timeElapsed < duration) {
                 requestAnimationFrame(step);
-            }
+            }th
         }
 
         function easeInOutQuad(t, b, c, d) {
