@@ -29,6 +29,10 @@ nav {
 
 }
 
+.counselling{
+    height: 100vh;
+
+}
 .logo{
   width: 60px;
   height: 30%;
@@ -405,7 +409,8 @@ color: white;
      position: sticky;
      right: 40px;
      bottom: 100px;
-     width: 420px;
+     width:  35vw;
+     
      overflow: hidden;
      background: #fff;
      border-radius: 15px;
@@ -431,9 +436,27 @@ body.show-chatbot .chatbot{
 }
 
 .chatbox{
-     height: 500px;
+     height: 65vh;
      overflow-y: auto;
      padding: 15px 20px 70px;
+}
+.chat_box{
+     display: flex;
+     justify-content: center;
+     margin-left:900px ;
+     margin-top: 80px;
+     
+}
+.head{
+   text-align: center;
+
+}
+
+.head:hover{
+    transform: scale(1.5);
+    /* text-decoration: underline;   */
+    cursor: pointer;
+    text-shadow: #717171;
 }
 
 .chat {
@@ -486,13 +509,13 @@ body.show-chatbot .chatbot{
      height: 55px;
      line-height: 55px;
 }
-
+/* 
 .toggler{
+    display: hidden;
      position: fixed;
      right: 40px;
      bottom: 35px;
-     height: 50px;
-     width: 50px;
+    
      display: flex;
      align-items: center;
      justify-content: center;
@@ -506,7 +529,7 @@ body.show-chatbot .chatbot{
 
 .toggler span{
      position: absolute;
-}
+} */
 
 .show-chatbot .toggler span:first-child,
 .toggler span:last-child{
