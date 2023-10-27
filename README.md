@@ -7,3 +7,4 @@ deno run --allow-read=./ --allow-write=./localdb --allow-net=:8000 --watch serve
 
 
 Check point 1 update 12:33;
+hello
