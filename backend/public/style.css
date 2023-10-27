@@ -100,37 +100,48 @@ nav {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: radial-gradient(rgba(64, 75, 82, 0), rgba(129, 138, 142, 0.6), rgba(100, 106, 109, 100%));
+    background: radial-gradient(rgba(0, 0, 0, 0.121), rgba(2, 2, 2, 0.6), rgba(100, 106, 109, 100%));
 }
 
 
 /* voyager title for landing page  */
 .voyager {
-    display: grid;
-    place-items: center;
-    /* margin-top; */
-    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 100vw;
+    height: 100vh;
 }
 
-.voyager span {
+.voyager div {
     /* z-index: -2; */
-    font-size: 7rem;
+    margin-left: 5vw;
+    font-size: 5vw;
     display: block;
     color: white;
-    letter-spacing: 40px;
+    /* letter-spacing: 40px;
     -webkit-text-fill-color:
         transparent;
     line-height: .9em;
     -webkit-text-stroke-width: 1px;
-    transition: .5s;
+    transition: .5s; */
 }
-
-.voyager span:hover {
+.quote{
+    width: 50vw;
+margin-left: 5vw;
+font-size: 2vw;
+color: white;
+}
+/* 
+.voyager div:hover {
     text-shadow: 10px -4px;
-}
+} */
 
 .title-center {
-    translate: 90px;
+    margin-top: 30vh;
+    /* translate: -90px; */
     /* font-weight: 550; */
     font-weight: 500;
 }
@@ -150,7 +161,7 @@ nav {
 
  ul {
     list-style-type: none;
-    margin-left: 7.5%;
+    margin-left: 5vw;
     margin-top: 3%;
     padding: 1rem;
     padding: 0;
@@ -224,6 +235,7 @@ nav {
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
+    visibility: hidden;
     transition: background-color 0.6s ease;
   }
   .active {
