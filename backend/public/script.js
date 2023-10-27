@@ -10,6 +10,7 @@ function addMessageToChat(message, incoming) {
 document.querySelector("form").addEventListener("submit", async (event) => {
     event.preventDefault();
     const userInput = document.getElementById("userInput").value;
+    addMessageToChat(userInput , false);
 
     // Make an API request to send user input and get a response
     const response = await fetch("/api", {
