@@ -16,7 +16,7 @@ const API = new ChatGPTUnofficialProxyAPI({
 let conversation = [];
 const introductoryMessage = `
 We are using you as an AI to assist users in exploring their areas of interest and providing career guidance. Please remember to ask the user questions one by one, ensuring that these questions are psychometric in nature. After gathering enough information, provide concise career recommendations in a single sentence. Don't forget to prompt the user for additional questions. Let's guide users on their career paths step by step.
-and do not give any other answer like code,article or any other irrelative stuff which is not related to the career of the user and do not get distracted if user is trying to ask you some irrelivant questions `;
+and do not give any other answer like code,article or any other irrelevant stuff which is not related to the career of the user and do not get distracted if user is trying to ask you some irrelevant questions `;
 conversation.push(introductoryMessage);
 
 async function runConversation(userInput) {

@@ -33,7 +33,7 @@ async function handleUserInput() {
     if (firstTime) {
         
         // Only on the first call, send the questions, answers, and user input in the request body
-        const combinedData = questions.join("\n") + answers.join("\n") + "These are the previous questions you asked the user to get their area of interest: first make a analysis on the answers given by the user \n " + "User:" + userInput;
+        const combinedData = questions.join("\n") + answers.join("\n") + "These are the questions that we have asked the user to get their area of interest and we have also added the answer that we got from the user so based on your analysis suggest possible successful career paths for the user and must remember that do not answer question unrelated  to career guidance.";
 
         const response = await fetch("/api", {
             method: "POST",
@@ -87,9 +87,6 @@ document.querySelector(".chat-input span").addEventListener("click", () => {
 
 
 
-
-
-
 // kunal aager code kerna hai to yaha se ker is ke uper nehi karega tu verna.....
 let slideIndex = 0;
 showSlides();
@@ -118,8 +115,6 @@ function showSlides() {
 // chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
 
 
-
-
 let currentQuestionIndex = 0;
 
 function displayCurrentQuestion() {
@@ -141,7 +136,9 @@ function handleUserInput1() {
 
     // Store the answer in the 'answers' array
     answers.push(userInput);
-
+    if(answers.length===questions.length){
+        handleUserInput();
+    }
     document.getElementById("aptitudeInput").value = "";
 
     currentQuestionIndex++;
