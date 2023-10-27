@@ -406,7 +406,7 @@ color: white;
 }
 
 .chatbot{
-     position: sticky;
+     position:relative;
      right: 40px;
      bottom: 100px;
      width:  35vw;
