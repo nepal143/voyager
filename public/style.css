@@ -392,7 +392,9 @@ color: white;
     width: 300px;
     border: 1px solid skyblue;
   }
-  
+  body {
+    overflow-x: hidden;
+  }
  
 
 
@@ -453,7 +455,7 @@ body.show-chatbot .chatbot{
 }
 
 .head:hover{
-    transform: scale(1.5);
+    /* transform: scale(1.5); */
     /* text-decoration: underline;   */
     cursor: pointer;
     text-shadow: #717171;
