@@ -85,7 +85,14 @@
   <div   id="counselling">
     <h1 class="head">Career counselling</h1>
     <div class="aptitude_test">
-      
+      <h1>Aptitude Question</h1>
+    <form id="aptitudeForm">
+        <div class="question-container">
+            <p id="questionText"></p>
+        </div>
+        <input type="text" id="aptitudeInput" name="aptitudeInput" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
     </div>
     <div class="chat_box">
       <form action="/api" method="post">
@@ -105,14 +112,7 @@
   </div>
   
 
-  <h1>Aptitude Question</h1>
-    <form id="aptitudeForm">
-        <div class="question-container">
-            <p id="questionText"></p>
-        </div>
-        <input type="text" id="aptitudeInput" name="aptitudeInput" required><br><br>
-        <input type="submit" value="Submit">
-    </form>
+  
 
 
 
