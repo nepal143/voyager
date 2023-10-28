@@ -1,7 +1,10 @@
 # Voyager 
 
 # Finally Deployed 
-https://clever-alpaca-90.deno.dev/
+https://clear-camel-17-qnc07efhvzm0.deno.dev/  
+//zappier 
+https://clever-alpaca-90.deno.dev/  
+//chatgpt unofficial proxy api is down 
 
 Run command for backend  
 deno run -A src/app.ts
