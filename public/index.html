@@ -8,9 +8,11 @@
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  
 </head>
 
 <body class="show-chatbot"> 
+  <script type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
   <!-- nav bar starts here -->
   <nav>
     <div class="container">
@@ -67,7 +69,7 @@
       Voyager offers the best of its kind online career counselling in India. Get in touch with our latest tech to get the best career counselling and take your career to a new high.</p>
     <ul class="kunal">
       <li class="kunal-li">
-        <a href="#counselling" id="scrollTo" style="text-decoration: none; color: chocolate;">GET STARTED
+        <a href="#chatbot" id="scrollTo" style="text-decoration: none; color: chocolate;">GET STARTED
         <span></span><span></span><span></span><span></span></a>
       </li>
     </ul>
@@ -77,13 +79,16 @@
   <div style="text-align:center;">
     <span class="dot"></span>
     <span class="dot"></span>
+    <div class="chat-bot">
+      <zapier-interfaces-page-embed id="chatbot" page-id='clmvzh48x01090omaa09amj3e' no-background='true' style='max-width: 900px; height: 800px;'></zapier-interfaces-page-embed>
+  </div>
     <!-- <span class="dot"></span>  -->
   </div>
   <!-- <button class="button"  >GET STARTED</button> -->
   <!-- /*started editing from here*/ -->
- 
+<!--  
   <div id="counselling">
-    <h1 class="head">Career counselling</h1>
+     <h1 class="head">Career counselling</h1>
     <div class="aptitude_test" >
       <form id="aptitudeForm">
       <h2>Career Assement Question</h2>
@@ -94,8 +99,9 @@
         <br><br>
         <input id="khatam" type="submit" value="Submit">
     </form>
-    </div>
-    <div class="chat_box" id="chatbox">
+    </div> -->
+
+    <!-- <div class="chat_box" id="chatbox">
       <form action="/api" method="post">
     <div class="chatbot" >
         <header>
@@ -110,7 +116,7 @@
     </div>
     </form>
     </div>
-  </div>
+  </div> -->
   <script>
     document.getElementById('scrollTo').addEventListener('click', function() {
             scrollToSection('counselling', 1000); // 1000ms (1 second) duration

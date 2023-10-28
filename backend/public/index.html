@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>voyager</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <!-- <script defer src="/public/Typed.js"></script> -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+<body class="show-chatbot"> 
+  <!-- nav bar starts here -->
+  <nav>
+    <div class="container">
+
+                <div class="logo">
+                    <h1>VOYAGER</h1>
+                    <img src="logohover.png" alt="img" width="70px" height="50px">
+                  </div>
+
+                <div class="links">
+                    <a href="#">HOME</a>
+                    <!-- <a href="#">HOME</a> -->
+                    <!-- <a href="our team/our-team.html">TEAM</a> -->
+                    
+                    <!-- <a href="">REGISTER</a> -->
+                </div>
+
+
+            </div>
+        </nav>
+    <!-- nav bar ends here  -->
+
+    <!-- landing page image with radially blur background  -->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="mfrack_realistic_cinematic_photo_of_AI_and_woman_104810a2-4a70-401d-91b7-33fcf5cd45be.jpeg" class="landing-page-background">
+        </div>
+        <div class="mySlides fade">
+          <img src="student_with_Ai.jpg" class="landing-page-background">
+        </div>
+        
+         <div class="mySlides fade">
+          
+          <img src="chatgptcounselling.png" class="landing-page-background">
+    
+        </div>
+        <div class="radial-gradient"></div>
+        </div>
+        <br>
+        
+        
+        
+        <!-- voyager title 5 times -->
+       
+
+
+  <!-- voyager title 5 times -->
+
+
+  <div class="voyager">
+    <!-- <span class="title-1">VOYAGER</span>
+        <span class="title-2">VOYAGER</span> -->
+    <div class="title-center">VOYAGER</div>
+    <p class="quote">Are You Looking for Career Counselling Online?
+      Voyager offers the best of its kind online career counselling in India. Get in touch with our latest tech to get the best career counselling and take your career to a new high.</p>
+    <ul class="kunal">
+      <li class="kunal-li">
+        <a href="#counselling" id="scrollTo" style="text-decoration: none; color: chocolate;">GET STARTED
+        <span></span><span></span><span></span><span></span></a>
+      </li>
+    </ul>
+    <!-- <span class="title-2">VOYAGER</span>
+        <span class="title-1">VOYAGER</span> -->
+  </div>
+  <div style="text-align:center;">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <!-- <span class="dot"></span>  -->
+  </div>
+  <!-- <button class="button"  >GET STARTED</button> -->
+  <!-- /*started editing from here*/ -->
+ 
+  <div id="counselling">
+    <h1 class="head">Career counselling</h1>
+    <div class="aptitude_test" >
+      <form id="aptitudeForm">
+      <h2>Career Assement Question</h2>
+        <div class="question-container">
+            <p id="questionText"></p>
+        </div>
+        <input type="text" id="aptitudeInput" name="aptitudeInput" required></input>
+        <br><br>
+        <input id="khatam" type="submit" value="Submit">
+    </form>
+    </div>
+    <div class="chat_box" id="chatbox">
+      <form action="/api" method="post">
+    <div class="chatbot" >
+        <header>
+            <h2>Chatbot</h2>
+        </header>
+        <ul class="chatbox">
+        </ul>
+        <div class="chat-input">
+          <textarea type="text" id="userInput" name="userInput" placeholder="Enter here..." required></textarea>
+          <span id="send-btn" class="material-symbols-outlined">send</span>
+        </div>
+    </div>
+    </form>
+    </div>
+  </div>
+  <script>
+    document.getElementById('scrollTo').addEventListener('click', function() {
+            scrollToSection('counselling', 1000); // 1000ms (1 second) duration
+        });
+  function scrollToSection(sectionId, duration) {
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+        const offsetTop = targetSection.getBoundingClientRect().top + window.scrollY;
+        const startingY = window.scrollY;
+        const distance = offsetTop - startingY;
+        const startTime = performance.now();
+
+        function step() {
+            const currentTime = performance.now();
+            const timeElapsed = currentTime - startTime;
+
+            window.scrollTo(0, easeInOutQuad(timeElapsed, startingY, distance, duration));
+
+            if (timeElapsed < duration) {
+                requestAnimationFrame(step);
+            }
+        }
+
+        function easeInOutQuad(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        }
+
+        requestAnimationFrame(step);
+    }
+}
+</script>
+</body>
+</html>
+

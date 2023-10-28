@@ -180,7 +180,12 @@ color: white;
     justify-content: center;
     align-items: center;
 }
+.chat-bot{
+    /* margin:auto; */
+    /* background-color: #000;
+    margin-left: 40px; */
 
+}
  .kunal .kunal-li {
     --c: rgb(244, 244, 244);
     color:rgb(0, 13, 36);

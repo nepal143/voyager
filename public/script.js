@@ -136,9 +136,9 @@ function handleUserInput1() {
 
     // Store the answer in the 'answers' array
     answers.push(userInput);
-    if(answers.length===questions.length){
-        handleUserInput();
-    }
+    // if(answers.length===questions.length){
+    //     handleUserInput();
+    // }
     document.getElementById("aptitudeInput").value = "";
 
     currentQuestionIndex++;
