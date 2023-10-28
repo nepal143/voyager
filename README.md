@@ -2,7 +2,7 @@
 
 # Finally Deployed 
 https://clear-camel-17-qnc07efhvzm0.deno.dev/  
-//zappier 
+//zappier  
 https://clever-alpaca-90.deno.dev/  
 //chatgpt unofficial proxy api is down 
 
